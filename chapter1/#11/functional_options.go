@@ -79,12 +79,15 @@ func WithReadOnly() DBOption {
 
 // NewGoodDB has sensible defaults and clear optional configuration
 func NewGoodDB(options ...DBOption) *GoodDB {
+	// This initializes defaults
 	db := &GoodDB{
 		host:     "localhost",
 		port:     5432,
 		maxConns: 10,
 		timeout:  30 * time.Second,
 	}
+
+	// This will result the defaults if a user chooses to do so
 	for _, opt := range options {
 		opt(db)
 	}
@@ -97,6 +100,7 @@ func do() {
 		WithHost("prod.db"),
 		WithSSL(),
 		WithTimeout(5))
+
 	//or with all defaults:
 	dbDefault := NewGoodDB()
 	_, _ = db, dbDefault
