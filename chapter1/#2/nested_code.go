@@ -5,10 +5,6 @@ import (
 	"fmt"
 )
 
-// Anti-pattern: Overly Nested Code (Chapter 2)
-// Problem: Deep nesting makes code hard to read and understand
-
-// BadNestedCode demonstrates overly nested code
 func BadNestedCode(items []string) error {
 	if len(items) > 0 {
 		for _, item := range items {

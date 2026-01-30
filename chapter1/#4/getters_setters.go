@@ -3,17 +3,12 @@ package chapter1
 import "errors"
 
 // Anti-pattern: Overly Using Getters and Setters (Chapter 2)
-// Problem: In Go, unnecessary getters and setters add noise without providing value
-// Go's exported/unexported naming convention is sufficient for encapsulation
-
-// BadUser demonstrates overly using getters and setters
 type BadUser struct {
 	name  string
 	email string
 	age   int
 }
 
-// Unnecessary getters - adds noise
 func (u *BadUser) GetName() string {
 	return u.name
 }
@@ -26,7 +21,6 @@ func (u *BadUser) GetAge() int {
 	return u.age
 }
 
-// Unnecessary setters - adds noise
 func (u *BadUser) SetName(name string) {
 	u.name = name
 }

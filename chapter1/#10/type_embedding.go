@@ -5,11 +5,6 @@ import (
 	"fmt"
 )
 
-// Anti-pattern: Problems with Type Embedding (Page 36)
-// Problem: Type embedding can lead to unexpected behavior and confusion
-// between "is-a" relationships and "has-a" relationships
-
-// BadLogger demonstrates problematic type embedding
 type Logger struct {
 	prefix string
 }
@@ -20,8 +15,6 @@ func (l *Logger) Log(message string) {
 
 func (l *Logger) DoWeNeedThis(message string) {}
 
-// BadService embeds Logger, which promotes all Logger methods
-// This creates confusion - is BadService a Logger or does it have a Logger?
 type BadService struct {
 	Logger // Embedded type - promotes methods
 	name   string
