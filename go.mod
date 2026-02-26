@@ -1,3 +1,3 @@
 module github.com/whorst/book-club
 
-go 1.25.5
+go 1.25.7
