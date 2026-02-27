@@ -15,6 +15,9 @@ func TestContextDeadline(t *testing.T) {
 	ctx, cancel := context.WithTimeout(context.Background(), 100*time.Millisecond)
 	defer cancel()
 
+	//ctx.Done() channel acts like a read-only broadcast mechanism - when it closes, all goroutines
+	//listening are notified simultaneously
+
 	done := make(chan bool)
 
 	go func() {
@@ -58,6 +61,7 @@ func TestContextValue(t *testing.T) {
 	ctx := context.WithValue(context.Background(), "userID", 42)
 
 	done := make(chan bool)
+	//context.Value() does provide immutable key-value storage that propagates down the call tree
 
 	go func(ctx context.Context) {
 		userID := ctx.Value("userID")
