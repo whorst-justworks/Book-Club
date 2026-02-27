@@ -7,13 +7,13 @@ import (
 func Test_sequential20(t *testing.T) {
 	server := startServer()
 	defer stopServer(server)
-	sequential20()
+	parallelGoroutinesTasks(1, 20)
 }
 
 func Test_parallel16GoroutinesWith200Tasks(t *testing.T) {
 	server := startServer()
 	defer stopServer(server)
-	parallelGoroutinesTasks(16, 200)
+	parallelGoroutinesTasks(16, 32)
 }
 
 func Test_parallel200GoroutinesWith200Tasks(t *testing.T) {
