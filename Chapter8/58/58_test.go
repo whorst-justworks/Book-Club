@@ -41,11 +41,13 @@ func listing2() int64 {
 
 	go func() {
 		defer wg.Done()
+		//atomic.CompareAndSwapInt64 will do this conditionally
 		atomic.AddInt64(&i, 1)
 	}()
 
 	go func() {
 		defer wg.Done()
+		//atomic.CompareAndSwapInt64 will do this conditionally
 		atomic.AddInt64(&i, 1)
 	}()
 	wg.Wait()
