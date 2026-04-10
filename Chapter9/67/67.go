@@ -38,7 +38,7 @@ func UnbufferedChannel() {
 }
 
 func BufferedChannel() {
-	ch := make(chan int, 1) // buffered channel
+	ch := make(chan int, 2) // buffered channel
 
 	var wg sync.WaitGroup
 	wg.Add(2)
