@@ -59,7 +59,7 @@ func goodExample() error {
 	}
 
 	b := []byte(`{
-		"id": 123,
+		"id": 123.456,
 		"name": "John Doe",
 		"active": true,
 		"address": {

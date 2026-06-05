@@ -48,7 +48,7 @@ func rightDuration() {
 
 func main() {
 
-	wrongDuration()
+	//wrongDuration()
 	rightDuration()
 
 }

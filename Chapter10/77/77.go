@@ -24,7 +24,7 @@ func badComparison() {
 	err = json.Unmarshal(b, &event2)
 	if err != nil {
 	}
-	fmt.Println("is Time Equal ", event1 == event2)
+	fmt.Println("is Time Equal ", event1.Time == event2.Time)
 	fmt.Println("event1 ", event1)
 	fmt.Println("event2 ", event2)
 }
@@ -58,7 +58,7 @@ func goodComparison() {
 }
 
 func main() {
-	badComparison()
+	//badComparison()
 	goodComparison()
 
 }
